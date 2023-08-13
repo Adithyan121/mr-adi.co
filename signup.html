@@ -1,0 +1,119 @@
+<!-- Author = Adithyan G
+ "https://instagram.com/mr._a.d.i__?igshid=OGQ2MjdiOTE=/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="This is a personal website built with Bootstrap.">
+    <meta name="author" content="Adithyan G">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="Adithyan" /> <!-- website name -->
+	<meta property="og:site" content="https://adithyan121.github.io/adi.in/" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="Hello, my name is Adithyan G and welcome to my personal website. I am a btech student and also a developer and ethical hacker. I specialize in creating secure and efficient software solutions while also identifying the security threats. I am passionate about using my skills for the betterment of society and strive to make the digital world a safer place for all.. I created this website to share my projects. Thank you for visiting and I hope you enjoy exploring my site." /> <!-- description shown in the actual shared post -->
+	<meta property="og:url" content="instagram" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+    
+    <link rel="stylesheet" href="assets/css/stylesign.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Contact Form</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form id="myForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfqpE75QutqK0iXFsurYnHzPo3iD393zaVspuSAwaka6p0z9w/formResponse" method="POST">
+            <h2>contact</h2>
+            <div class="input-box">
+                <span class="icon">
+                    <ion-icon name="person"></ion-icon>
+                </span>
+                <input  type="text" id="name" name="entry.2005620554"placeholder="Full Name" required>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                    <ion-icon name="mail"></ion-icon>
+                </span>
+                <input type="email" id="email" name="entry.1045781291" 
+                placeholder="Email" required>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                  
+                    <i class="fas fa-phone"></i>
+                </span>
+                <input type="tel" id="phone" name="entry.1166974658" 
+                placeholder="phone Number" required>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                        <i class="fab fa-whatsapp"></i>
+                </span>
+                <input type="tel" id="phone" name="entry.1065046570"
+ 
+                placeholder="whatsapp Number" required>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                    <i class="fas fa-question"></i>
+                </span>
+                <input type="text" id="question" name="entry.839337160" 
+                placeholder="message" required >
+            </div>
+            
+            
+            <button type="submit" onclick="submitForm()">Submit</button>
+            <div class="registration-link">
+                <p><a href="https://wa.me/916235095260?text=Hi%2CAdi%20help%20me%20to%20create%20a%20website">Send WhatsApp Message <i class="fab fa-whatsapp"></i></a></p>
+                
+                <p><a href="index.html">back to home</a></p>
+            </div>
+        </form>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</script>
+<script>
+  const form = document.getElementById('myForm');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(e.target.action, {
+      method: 'POST',
+      mode: 'no-cors',
+      cache: 'no-cache',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: new URLSearchParams(new FormData(e.target)).toString()
+    });
+    form.reset();
+    alert('Thank you for messaging us! We will contact you soon');
+  });
+</script>
+<script>
+ (function displayFormResponse() {
+const formResponseContainer = document.getElementById('form-response');
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const success = urlParams.get('success');
+if (success === 'true') {
+  formResponseContainer.innerHTML = '<p>Thank you for messaging us! We will contact you soon</p>';
+} else if (success === 'false') {
+  formResponseContainer.innerHTML = '<p>There was an error submitting your message.</p>';
+} else {
+  formResponseContainer.innerHTML = '';
+}
+})();
+
+window.addEventListener('load', displayFormResponse);
+
+</script>
+
+
+</body>
+</html>
