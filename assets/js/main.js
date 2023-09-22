@@ -138,7 +138,7 @@
   /*==================== Resumebutton ====================*/
 document.getElementById("resumeButton").addEventListener("click", function() {
   var link = document.createElement('a');
-  link.href = 'assets/resume/resume.pdf'; // Replace 'new/path/to/resume.pdf' with the desired path
+  link.href = 'assets/resume.pdf'; // Replace 'new/path/to/resume.pdf' with the desired path
   link.download = 'resume.pdf';
   link.target = '_blank';
   link.click();
