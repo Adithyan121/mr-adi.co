@@ -1,0 +1,17 @@
+name: Rerun Existing Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  rerun-existing-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Existing Workflow
+        run: |
+          # Trigger your existing workflow by making a dummy change and pushing it
+          git checkout -b rerun-workflow
+          git commit --allow-empty -m "Trigger existing workflow"
+          git push origin rerun-workflow
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
